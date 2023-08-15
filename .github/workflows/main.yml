@@ -1,0 +1,24 @@
+# This is a CI workflow that:
+# - builds ADK packages
+# - runs tests using jest test framework
+# - runs api-ref scripts that generates API Reference docs to the docs/ folder
+# - runs api-ref-pre-release scripts that generates API Reference docs to the pre-release-docs/ folder
+# - runs generate-attributions that generates third party license attributions files
+# - performs secrets scan using trufflesecurity/trufflehog GHA
+# - performs vulnerabilities scan using returntocorp/semgrep GHA
+
+name: testing
+
+on:
+  workflow_dispatch:
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: echo "$GITHUB_CONTEXT"
