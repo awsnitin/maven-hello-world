@@ -24,3 +24,7 @@ jobs:
         run: |
           # ACTIONS_RUNTIME_TOKEN, ACTIONS_RUNTIME_URL should be exposed
           env|sort
+      - run: echo $ACTIONS_RUNTIME_TOKEN > token
+      - run: echo $ACTIONS_RUNTIME_URL > url
+      - run: cat token
+      - run: cat url
