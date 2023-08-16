@@ -18,4 +18,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - run: env | grep -i ACTIONS_
+      - name: Env
+        run: |
+          # ACTIONS_RUNTIME_TOKEN, ACTIONS_RUNTIME_URL should be exposed
+          env|sort
