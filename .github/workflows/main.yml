@@ -21,7 +21,7 @@ jobs:
       - name: Expose GitHub Runtime
         uses: crazy-max/ghaction-github-runtime@v2
         env:
-           Hello: World
+           ACTIONS_Hello: World
       - name: Env
         run: |
           # ACTIONS_RUNTIME_TOKEN, ACTIONS_RUNTIME_URL should be exposed
