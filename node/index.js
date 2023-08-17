@@ -14,6 +14,7 @@ server.use(bodyParser.raw({
 }))
 
 server.use((req, res, next) => {
+    console.log(req);
     if (req.get('Authorization') !== `Bearer ${process.env.AUTH_KEY}`) {
         res.status(401).json({message: 'You are not authorized'});
     } else {
