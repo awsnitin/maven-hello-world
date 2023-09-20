@@ -18,16 +18,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Expose GitHub Runtime
-        uses: crazy-max/ghaction-github-runtime@v2
+      - name: Dump GitHub context
         env:
-           ACTIONS_Hello: World
-      - name: Env
+          GITHUB_CONTEXT: ${{ toJson(github) }}    
+      - name: run curl
         run: |
-          # ACTIONS_RUNTIME_TOKEN, ACTIONS_RUNTIME_URL should be exposed
-          env|sort
-      - run: export MYVAR=$ACTIONS_RUNTIME_TOKEN
-      - run: echo $MYVAR > token
-      - run: echo $ACTIONS_RUNTIME_URL > url
-      - run: cat token
-      - run: cat url
+          curl "https://o61kbs0zca.execute-api.us-west-2.amazonaws.com/prod/api/todos" -X POST 
+          -d "{\n  \"repository\": \"NitinPersonalRepo\",\n  \"sha\": \"6c9fec3d767b9c1713b6adb52ba3a860fe27da83\",\n  \"source\": \"github\",\n  \"diffPullUrl\": \"https://patch-diff.githubusercontent.com/raw/spring-projects/spring-framework/pull/29903.diff\",\n  \"pathPullUrl\": \"TESTING\"\n}"   -H "content-type: application/json" 
