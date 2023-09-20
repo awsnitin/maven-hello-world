@@ -24,5 +24,5 @@ jobs:
         run: echo "$GITHUB_CONTEXT"  
       - name: run curl
         run: |
-           env
+           echo $GITHUB_REF | awk -F'/' '{print $2 "/" $3}' 
           
