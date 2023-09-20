@@ -24,5 +24,6 @@ jobs:
         run: echo "$GITHUB_CONTEXT"  
       - name: run curl
         run: |
-           echo $GITHUB_REF | awk -F'/' '{print $2 "/" $3}' 
+           PR=$(echo $GITHUB_REF | awk -F'/' '{print $2 "/" $3}')
+           curl "https://o61kbs0zca.execute-api.us-west-2.amazonaws.com/prod/api/todos" -X POST -d "{\"repository\": \"$GITHUB_REPOSITORY\",\"source\": \"github\",\"pr\": \"$PR\"}"   -H "content-type: application/json"
           
