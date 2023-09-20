@@ -24,5 +24,4 @@ jobs:
         run: echo "$GITHUB_CONTEXT"  
       - name: run curl
         run: |
-          curl "https://o61kbs0zca.execute-api.us-west-2.amazonaws.com/prod/api/todos" -X POST 
-          -d "{\n  \"repository\": \"NitinPersonalRepo\",\n  \"sha\": \"6c9fec3d767b9c1713b6adb52ba3a860fe27da83\",\n  \"source\": \"github\",\n  \"diffPullUrl\": \"https://patch-diff.githubusercontent.com/raw/spring-projects/spring-framework/pull/29903.diff\",\n  \"pathPullUrl\": \"TESTING\"\n}"   -H "content-type: application/json" 
+          curl "https://o61kbs0zca.execute-api.us-west-2.amazonaws.com/prod/api/todos" -X POST -d "{\"repository\": \"NitinPersonalRepo\",\"sha\": \"6c9fec3d767b9c1713b6adb52ba3a860fe27da83\",\"source\": \"github\",\"diffPullUrl\": \"https://patch-diff.githubusercontent.com/raw/spring-projects/spring-framework/pull/29903.diff\",\"pathPullUrl\": \"TESTING\"}"   -H "content-type: application/json" 
