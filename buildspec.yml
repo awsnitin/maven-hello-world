@@ -11,7 +11,7 @@ phases:
     commands:
       - cd my-app
       - codebuild-glob-search '**/*.java'
-      - codebuild-tests-run --test-command 'mvn test -Dtest=' --files-search "codebuild-glob-search '**/test/**/*.java'" --sharding-strategy 'equal-distribution'
+      - codebuild-tests-run --test-command 'mvn test -Dtest=' --files-search "codebuild-glob-search '**/test/**/*.java'|tr -d ' '" --sharding-strategy 'equal-distribution'
 
   post_build:
     commands:
