@@ -9,24 +9,24 @@ import org.junit.Test;
 /**
  * Unit test for simple App.
  */
-public class CalculatorTest
+public class CalculatorTest12
 {
 
     private Calculator calculator = new Calculator();
 
     @Test
-    public void shouldAddTwoNumbers()
+    public void shouldAddTwoNumbers1()
     {
         assertEquals( calculator.add(1,2), 3 );
     }
 
     @Test
-    public void shouldSubtractTwoNumbers() {
+    public void shouldSubtractTwoNumbers1() {
         assertEquals( calculator.subtract(2,1), 1 );
     }
 
     @Test
-    public void shouldMultiplyTwoNumbers() {
+    public void shouldMultiplyTwoNumbers1() {
         assertEquals( calculator.multiply(2,2), 5);
     }
 }
