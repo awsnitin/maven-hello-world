@@ -27,6 +27,6 @@ public class CalculatorTest11
 
     @Test
     public void shouldMultiplyTwoNumbers() {
-        assertEquals( calculator.multiply(2,2), 4);
+        assertEquals( calculator.multiply(2,2), 5);
     }
 }
