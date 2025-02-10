@@ -9,6 +9,7 @@ batch:
 phases:
   build:
     commands:
+      - cd $CODEBUILD_SRC_DIR/my-app
       - mvn install
 
   post_build:
