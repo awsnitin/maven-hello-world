@@ -9,9 +9,7 @@ batch:
 phases:
   build:
     commands:
-      - cd my-app
-      - codebuild-glob-search '**/*.java'
-      - codebuild-tests-run --test-command 'mvn test -Dtest=' --files-search "codebuild-glob-search '**/test/**/*.java'|tr -d ' '" --sharding-strategy 'equal-distribution'
+      - mvn install
 
   post_build:
     commands:
